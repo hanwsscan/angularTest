@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>try_ng_form</title>
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+		<script src="bower_components/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bower_components/angular/angular.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			input.ng-invalid.ng-dirty {
+				background-color: yellow;
+			}
+			
+			div.error {
+				background-colro: red;
+			}
+		</style>
+
+		<script>
+			// Code goes here
+
+			angular.module('myApp', [])
+			.controller('TestCtrl', function($scope) {
+			  $scope.save = function() {};
+			  $scope.person = {
+			    name: ''
+			  };
+			})
+</script>
+	</head>
+
+	<body ng-app="myApp">
+		<div ng-controller="TestCtrl">
+			<h1>Hello Plunker!</h1>
+
+			<form name="myForm" ng-submit="save()">
+				<div ng-show="myForm.personName.$invalid  && myForm.personName.$dirty">form invalid</div>
+				<ferror field="myForm.personName">xxxx</ferror>
+				<input type="text" name="personName" ng-model="person.name" required>
+				<input type="submit" value="save" />
+			</form>
+		</div>
+	</body>
+
+</html>
